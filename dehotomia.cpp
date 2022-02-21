@@ -33,18 +33,18 @@ void dinatomia_b(int dlinna, float mass[], float b) {
 		c = (nachalo + konec) / 2;
 		if (mass[c - 1] > b) konec = c;
 		else nachalo = c;
-		if (konec == nachalo + 1) answer = nachalo;
+		if (konec == nachalo + 1) answer = nachalo - 1;
 	} while (answer == -1);
-	printf_s("%d", answer);
+	printf_s("Число %f нужно поставить на позицию %d\nпосле числа %f перед числом %f\n",b , answer, mass[nachalo - 1], mass[nachalo]);
 }
 
 int main() {
+	setlocale(LC_ALL, "RUS");
 	int dlinna_masiva, a_random;
 	dlinna_masiva = dlinna_massiva1();
 	float mass[100];
 	zapolnenie_massiva(dlinna_masiva, mass);
-	float b; printf_s("Vvedite B:"); scanf_s("%d", &b);
+	float b; printf_s("Vvedite B:"); scanf_s("%f", &b);
 	dinatomia_b(dlinna_masiva, mass, b);
-	system("pause");
 	return 1;
 }
