@@ -1,6 +1,7 @@
 #include <iostream>
 #include <time.h>
 
+// задание с дихотомией №16
 // ввод пользователем длинны масива
 int dlinna_massiva1() {
 	int a;
@@ -22,6 +23,7 @@ void zapolnenie_massiva(int dlinna, float mass[]) {
 	}
 }
 
+// поис позиции в массиве для числа В
 void dinatomia_b(int dlinna, float mass[], float b) {
 	int answer = -1, c;
 	int nachalo = 0, konec = dlinna;
@@ -38,6 +40,8 @@ void dinatomia_b(int dlinna, float mass[], float b) {
 	printf_s("Число %.1f нужно поставить на позицию %d\nпосле числа %.1f перед числом %.1f\n",b , answer, mass[nachalo - 1], mass[nachalo]);
 }
 
+
+// поиск пары в массиве для числа С с помощью дихотомии
 void dinatomia_с(int dlinna, float mass[], float c) {
 	float answer = -1;
 	int nachalo = 0, konec = dlinna, pos, f;
@@ -55,7 +59,7 @@ void dinatomia_с(int dlinna, float mass[], float c) {
 			else answer = mass[konec - 3]; pos = konec - 3;
 		}
 	} while (konec != nachalo + 1);
-	if (answer != -1) printf_s("Число %f имеет равное число", c);
+	if (answer != -1) printf_s("Число %.1f имеет равное число", c);
 	else printf_s("Не имеет равного числа");
 }
 
